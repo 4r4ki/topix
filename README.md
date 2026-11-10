@@ -48,11 +48,12 @@
 
 ## バージョン管理
 
-変更するときは次の3つをそろえます。
+変更するときは次の手順をそろえます。
 
 1. `version.js` の `APP_VERSION` を上げる(画面の一番下に表示されます)
 2. `CHANGELOG.md` に変更内容を書く
-3. `main` に反映したコミットに git タグ(例:`v2.0.0`)をつける
+3. `main` に反映する
+4. (おすすめ)GitHub の **Releases → Draft a new release** で、タグ(例:`v2.0.0`)をつけてリリースを作る
 
 番号の上げ方のルールは [CHANGELOG.md](CHANGELOG.md) の冒頭にあります。
 
