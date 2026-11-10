@@ -1,12 +1,12 @@
 :root {
-  --bg: #fff8f0;
+  --bg: #f2f6fb;
   --card: #ffffff;
-  --text: #33302c;
-  --sub: #7a716a;
-  --accent: #ff8a3d;
-  --accent-soft: #ffe7d4;
+  --text: #1f2733;
+  --sub: #66707c;
+  --accent: #2f6fde;
+  --accent-soft: #dce9ff;
   --green: #2fb380;
-  --line: #f0e4d8;
+  --line: #dfe7f1;
 }
 * { box-sizing: border-box; }
 body {
@@ -39,7 +39,7 @@ main { max-width: 640px; margin: 0 auto; padding: 0 12px 24px; }
 
 .card {
   background: var(--card); border-radius: 18px; padding: 18px;
-  margin: 14px 0; box-shadow: 0 2px 8px rgba(120, 80, 40, .08);
+  margin: 14px 0; box-shadow: 0 2px 8px rgba(40, 70, 120, .1);
 }
 .card h2 { font-size: 19px; margin: 0 0 8px; }
 .card ul, .card ol { padding-left: 1.3em; margin: 6px 0; }
@@ -73,7 +73,7 @@ main { max-width: 640px; margin: 0 auto; padding: 0 12px 24px; }
 }
 .btn.primary { background: var(--green); color: #fff; }
 .btn.primary.on { background: #e5f7ef; color: var(--green); }
-.btn.ghost { background: #f6f2ee; color: var(--sub); }
+.btn.ghost { background: #eef2f6; color: var(--sub); }
 .btn.ghost.on { background: #fff3c4; color: #a37a00; }
 .btn.secondary { width: 100%; background: #fff; color: var(--accent); border: 2px dashed var(--accent); }
 .more { margin-top: 18px; }
@@ -95,7 +95,7 @@ main { max-width: 640px; margin: 0 auto; padding: 0 12px 24px; }
 .neta { border: 2px solid var(--line); border-radius: 14px; padding: 10px 14px; }
 .neta p { margin: 4px 0 0; font-size: 15px; }
 .templates { list-style: none; padding: 0 !important; }
-.templates li { background: #f8f5f1; border-radius: 10px; padding: 8px 12px; font-weight: bold; }
+.templates li { background: #eef2f6; border-radius: 10px; padding: 8px 12px; font-weight: bold; }
 
 .count { font-size: 48px; font-weight: bold; color: var(--green); }
 .count span { font-size: 64px; }

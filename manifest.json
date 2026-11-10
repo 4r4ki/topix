@@ -3,7 +3,7 @@
   "short_name": "topix",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#fff8f0",
-  "theme_color": "#ff8a3d",
+  "background_color": "#f2f6fb",
+  "theme_color": "#2f6fde",
   "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
 }
