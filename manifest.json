@@ -1,0 +1,9 @@
+{
+  "name": "topix - きょうの話題",
+  "short_name": "topix",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff8f0",
+  "theme_color": "#ff8a3d",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

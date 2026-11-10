@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>topix - きょうの話題</title>
+  <meta name="theme-color" content="#ff8a3d" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>💬 topix</h1>
+    <p class="tagline">毎日ひとつ、話しかけるきっかけ</p>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="today">きょう</button>
+    <button class="tab" data-tab="howto">話しかけ方</button>
+    <button class="tab" data-tab="neta">鉄板ネタ</button>
+    <button class="tab" data-tab="log">きろく</button>
+  </nav>
+
+  <main>
+    <!-- ===== きょうの話題 ===== -->
+    <section id="today" class="panel active">
+      <div class="datebar">
+        <button id="prevDay" class="arrow" aria-label="前の日">◀</button>
+        <div id="dateLabel" class="date"></div>
+        <button id="nextDay" class="arrow" aria-label="次の日">▶</button>
+      </div>
+      <button id="backToday" class="link hidden">きょうにもどる</button>
+
+      <div id="cards"></div>
+
+      <div class="card trivia">
+        <div class="label">💡 きょうの「知ってた?」</div>
+        <p id="trivia" class="trivia-text"></p>
+        <p class="hint">「ねえ、知ってた? 〇〇なんだって!」と言うだけで会話になるよ。</p>
+      </div>
+
+      <div class="more">
+        <button id="moreBtn" class="btn secondary">🎲 ほかの話題も見てみる</button>
+        <div id="moreCard"></div>
+      </div>
+    </section>
+
+    <!-- ===== 話しかけ方 ===== -->
+    <section id="howto" class="panel">
+      <div class="card">
+        <h2>🌱 まず知っておいてほしいこと</h2>
+        <ul>
+          <li><b>話すのが苦手な人は、実はたくさんいる。</b>話しかけられるのを待っている人も多いよ。</li>
+          <li><b>上手に話さなくていい。</b>会話は「話す」より「聞く」ほうが大事。</li>
+          <li><b>会話がとちゅうで止まっても失敗じゃない。</b>「じゃあまたね」でOK。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>👣 話しかけ方 5つのステップ</h2>
+        <ol class="steps">
+          <li>
+            <b>名前を呼んで、あいさつ</b>
+            <p>「〇〇くん、おはよう」。名前を呼ぶと、自分に話しかけてくれたとわかって安心してもらえる。</p>
+          </li>
+          <li>
+            <b>目の前のことから話す</b>
+            <p>「それ何の本?」「その消しゴムいいね」「次、体育だよね」。見えているものなら話題をさがさなくていい。</p>
+          </li>
+          <li>
+            <b>答えやすい質問をする</b>
+            <p>最初は「AとBどっち?」みたいに<b>すぐ答えられる質問</b>がおすすめ。慣れてきたら「どうして?」「どんなところが?」と聞いてみよう。</p>
+          </li>
+          <li>
+            <b>あいづち + くり返し</b>
+            <p>相手の言ったことを少しくり返すと「ちゃんと聞いてくれてる」と伝わる。<br>
+            例:「カレーが好きなんだ!」→「へー、カレー好きなんだ! 何カレー?」</p>
+          </li>
+          <li>
+            <b>自分のことも少し話す</b>
+            <p>質問ばかりだとインタビューみたいになっちゃう。「ぼく(わたし)は〇〇派なんだ」と1つ足すと、会話がキャッチボールになる。</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>🗣️ 使える あいづち</h2>
+        <div class="chips">
+          <span>へー!</span><span>そうなんだ!</span><span>すごい!</span><span>わかる!</span>
+          <span>それで?</span><span>なんで?</span><span>知らなかった!</span><span>いいね!</span>
+          <span>まじで?</span><span>おもしろい!</span>
+        </div>
+        <p class="hint">うなずきながら、相手の顔を見て言うともっと伝わるよ。</p>
+      </div>
+
+      <div class="card">
+        <h2>⏰ 話しかけやすいタイミング</h2>
+        <ul>
+          <li>朝、教室に入ったとき(あいさつのついでに)</li>
+          <li>移動教室で一緒に歩いているとき</li>
+          <li>給食の準備中、食べているとき</li>
+          <li>グループ活動・班活動のとき</li>
+          <li>帰り道や、げた箱のところ</li>
+          <li>相手がひとりでいるとき(大人数より話しやすい)</li>
+        </ul>
+        <p class="hint">相手がいそがしそうなとき、だれかと真剣に話しているときは、また今度にしよう。</p>
+      </div>
+
+      <div class="card">
+        <h2>🛟 こまったときの合言葉</h2>
+        <dl class="qa">
+          <dt>会話が止まっちゃった…</dt>
+          <dd>「そういえばさ、」で別の話題へ。このアプリの話題をもう1つ使ってもOK。</dd>
+          <dt>相手の話がわからない…</dt>
+          <dd>「それ知らない! どんなの?」と聞けばいい。教えてもらうのは相手もうれしい。</dd>
+          <dt>何を言えばいいか真っ白になった…</dt>
+          <dd>「今日の給食なんだっけ?」は いつでも使える最強の一言。</dd>
+          <dt>終わり方がわからない…</dt>
+          <dd>「また教えて!」「じゃあね!」と笑顔で言えば、次も話しかけやすくなる。</dd>
+        </dl>
+      </div>
+
+      <div class="card warn">
+        <h2>🙅 さけたほうがいい話題</h2>
+        <ul>
+          <li>だれかの悪口や うわさ話</li>
+          <li>見た目や体のこと(背・体型など)</li>
+          <li>テストの点数やくらべっこ</li>
+          <li>家のこと・お金のこと(相手が話したくないかも)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>🎯 練習のコツ</h2>
+        <ul>
+          <li><b>1日1回でOK。</b>あいさつ+ひとことで十分。</li>
+          <li>話しかけたら「きろく」に✅をつけよう。増えていくと自信になる。</li>
+          <li>家族を相手に、きょうの話題で練習してみるのもおすすめ。</li>
+          <li>前の日に「自分ならどう答えるか」を考えておくと、話がつづきやすい。</li>
+        </ul>
+      </div>
+
+      <div class="card parents">
+        <h2>👨‍👩‍👧 おうちの方へ</h2>
+        <ul>
+          <li>夕食時などに、その日の話題でお子さんと会話の練習をしてみてください。答えを考えておくと学校で話しやすくなります。</li>
+          <li>うまく話せたかどうかより、<b>話しかけようとしたこと自体</b>をほめてあげてください。</li>
+          <li>「友達をたくさん作らなきゃ」と急がせず、1人と少しずつ話せれば十分です。</li>
+          <li>つらそうな様子が続くときは、担任の先生やスクールカウンセラーにも相談してみてください。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 鉄板ネタ ===== -->
+    <section id="neta" class="panel">
+      <div class="card">
+        <h2>🏆 いつでも使える鉄板ネタ</h2>
+        <p class="hint">迷ったらこの中から。だれにでも、いつでも使える話題だよ。</p>
+        <div class="neta-list">
+          <div class="neta"><b>🍛 給食</b><p>「今日の給食なんだっけ?」「給食で一番好きなのは?」<br>毎日あるから毎日使える。</p></div>
+          <div class="neta"><b>📅 休みの日</b><p>「週末なにしてた?」<br>月曜日の朝の定番。</p></div>
+          <div class="neta"><b>📺 動画・ゲーム</b><p>「最近なんかおもしろい動画あった?」「今なんのゲームやってる?」<br>知らなくても「どんなの?」と聞けばOK。</p></div>
+          <div class="neta"><b>⚖️ どっち派?</b><p>「犬派? ねこ派?」「好きなものは最初に食べる? 最後?」<br>答えやすくて盛り上がる。</p></div>
+          <div class="neta"><b>🤔 もしも</b><p>「透明人間になれたら何する?」「100万円あったら?」<br>正解がないから、みんな話しやすい。</p></div>
+          <div class="neta"><b>🏫 次の授業・行事</b><p>「次なんだっけ?」「運動会どう?」<br>同じクラスなら必ず共通の話題。</p></div>
+          <div class="neta"><b>🎒 中学校の話</b><p>「中学行ったら何部入る?」<br>6年生ならみんな気になっている話題。</p></div>
+          <div class="neta"><b>💡 知ってた?雑学</b><p>「タコって心臓3つあるんだって」<br>短くて、相手がリアクションしやすい。</p></div>
+          <div class="neta"><b>👀 相手の持ち物</b><p>「そのキーホルダー何のキャラ?」「その筆箱いいね」<br>好きなものを持っている人が多いから話が広がる。</p></div>
+          <div class="neta"><b>🙋 教えてもらう</b><p>「この問題どうやった?」「そのゲームのコツ教えて」<br>頼られると、人はうれしくなる。</p></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>✨ 最初のひとこと テンプレート</h2>
+        <ul class="templates">
+          <li>「ねえ、〇〇って好き?」</li>
+          <li>「〇〇くん(さん)って、△△派? □□派?」</li>
+          <li>「それ、何?」「それ、いいね!」</li>
+          <li>「ねえ知ってた? 〇〇なんだって!」</li>
+          <li>「昨日〇〇見た?」</li>
+          <li>「〇〇のやり方、教えてくれない?」</li>
+          <li>「一緒にやってもいい?」「まぜて!」</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>🔁 話をつづける 魔法の質問</h2>
+        <ul class="templates">
+          <li>「それって、どんなの?」</li>
+          <li>「なんでそれが好きなの?」</li>
+          <li>「いつからやってるの?」</li>
+          <li>「一番〇〇なのはどれ?」</li>
+          <li>「ほかには?」</li>
+          <li>「今度ぼく(わたし)にも教えて!」</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== きろく ===== -->
+    <section id="log" class="panel">
+      <div class="card center">
+        <h2>✅ 話しかけたきろく</h2>
+        <div class="count"><span id="usedCount">0</span> 回</div>
+        <div id="badge" class="badge"></div>
+      </div>
+      <div class="card">
+        <h2>⭐ お気に入りの話題</h2>
+        <ul id="favList" class="plain"></ul>
+      </div>
+      <div class="card">
+        <h2>📝 使ってみた話題</h2>
+        <ul id="usedList" class="plain"></ul>
+      </div>
+      <button id="resetBtn" class="link danger">きろくをリセットする</button>
+    </section>
+  </main>
+
+  <footer class="footer">topix · きろくは この端末の中にだけ保存されます</footer>
+
+  <script src="topics.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
