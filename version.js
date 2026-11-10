@@ -1,2 +1,2 @@
-// アプリのバージョン。変更したら CHANGELOG.md にも書き、git タグ(v2.0.0 など)をつける。
-const APP_VERSION = "2.0.0";
+// アプリのバージョン。変更したら index.html の「?v=」の番号と CHANGELOG.md もそろえる。
+const APP_VERSION = "2.0.1";

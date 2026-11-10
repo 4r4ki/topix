@@ -3,7 +3,13 @@
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const thisMonth = new Date().getMonth() + 1;
 
-  $("version").textContent = "v" + APP_VERSION;
+  // 古い画面(index.html)がブラウザに残っていると動かないので、最新を読み直す
+  if (!$("netabook")) {
+    if (!location.search.includes("fresh=")) location.replace(location.pathname + "?fresh=" + Date.now());
+    return;
+  }
+
+  $("version").textContent = typeof APP_VERSION === "string" ? "v" + APP_VERSION : "";
 
   // ---------- タブ ----------
   function showTab(name) {
