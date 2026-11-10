@@ -48,39 +48,66 @@ main { max-width: 640px; margin: 0 auto; padding: 0 12px 24px; }
 .hint { color: var(--sub); font-size: 14px; margin: 8px 0 0; }
 .hidden { display: none !important; }
 
-.datebar { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 8px; }
-.date { font-size: 18px; font-weight: bold; min-width: 190px; text-align: center; }
-.arrow {
-  border: none; background: #fff; border-radius: 50%; width: 38px; height: 38px;
-  color: var(--accent); cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.08);
-}
-.link { display: block; margin: 6px auto 0; border: none; background: none; color: var(--accent); font: inherit; font-size: 14px; cursor: pointer; text-decoration: underline; }
-.link.danger { color: #c55; margin-top: 24px; }
+.link { display: block; margin: 16px auto 0; border: none; background: none; color: var(--accent); font: inherit; font-size: 14px; cursor: pointer; text-decoration: underline; }
 
-.topic .label, .trivia .label { font-size: 14px; font-weight: bold; color: var(--accent); }
-.cat { float: right; color: var(--sub); font-weight: normal; }
-.question { font-size: 24px !important; line-height: 1.45; margin: 8px 0 12px !important; }
-.opener { background: var(--accent-soft); border-radius: 12px; padding: 10px 14px; }
+.opener { background: var(--accent-soft); border-radius: 12px; padding: 10px 14px; margin-top: 8px; }
 .opener span, .follow span { font-size: 13px; font-weight: bold; color: var(--sub); }
 .opener p { margin: 2px 0 0; font-weight: bold; }
 .follow { margin-top: 10px; }
 .follow ul { margin-top: 2px; }
 
-.actions { display: flex; gap: 8px; margin-top: 14px; }
 .btn {
-  flex: 1; border: none; border-radius: 12px; padding: 12px; font: inherit; font-size: 15px;
+  border: none; border-radius: 12px; padding: 12px; font: inherit; font-size: 15px;
   font-weight: bold; cursor: pointer;
 }
-.btn.primary { background: var(--green); color: #fff; }
-.btn.primary.on { background: #e5f7ef; color: var(--green); }
-.btn.ghost { background: #eef2f6; color: var(--sub); }
-.btn.ghost.on { background: #fff3c4; color: #a37a00; }
-.btn.secondary { width: 100%; background: #fff; color: var(--accent); border: 2px dashed var(--accent); }
-.more { margin-top: 18px; }
+.btn.secondary { width: 100%; background: #fff; color: var(--accent); border: 2px dashed var(--accent); margin-top: 10px; }
 
 .trivia { background: #eef7ff; }
-.trivia .label { color: #2d7fc1; }
-.trivia-text { font-size: 18px; font-weight: bold; margin: 6px 0 0; }
+
+.card h3 { font-size: 16px; margin: 16px 0 6px; color: var(--accent); }
+.card h2 small { font-size: 14px; color: var(--sub); font-weight: normal; }
+.card[id] { scroll-margin-top: 64px; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.toc a {
+  background: #fff; border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: bold;
+  color: var(--accent); text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+.levels { list-style: none; padding: 0 !important; }
+.levels li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.levels li:last-child { border: none; }
+.levels p { margin: 0; font-size: 15px; color: var(--sub); }
+.lv {
+  flex: none; background: var(--accent); color: #fff; font-weight: bold; font-size: 13px;
+  border-radius: 8px; padding: 2px 8px; margin-top: 3px;
+}
+
+.scene { border: 2px solid var(--line); border-radius: 14px; padding: 10px 14px; margin-top: 10px; }
+.scene ul { margin: 4px 0 0; }
+
+.chat { display: flex; flex-direction: column; gap: 6px; }
+.chat p { margin: 0; max-width: 85%; padding: 8px 12px; border-radius: 14px; font-size: 15px; }
+.chat .me { align-self: flex-end; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; }
+.chat .you { align-self: flex-start; background: #eef2f6; border-bottom-left-radius: 4px; }
+.chat small { display: block; font-size: 12px; opacity: .85; }
+.chat small::before { content: "👉 "; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 8px; }
+.chip {
+  border: 2px solid var(--line); background: #fff; border-radius: 999px; padding: 4px 12px;
+  font: inherit; font-size: 13px; font-weight: bold; color: var(--sub); cursor: pointer;
+}
+.chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.item { border-bottom: 1px solid var(--line); padding: 10px 0; }
+.item summary { cursor: pointer; font-weight: bold; list-style: none; }
+.item summary::-webkit-details-marker { display: none; }
+.item summary::after { content: "＋"; float: right; color: var(--accent); }
+.item[open] summary::after { content: "－"; }
+.item .emoji { margin-right: 6px; }
+.month { font-size: 12px; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: #eef2f6; color: var(--sub); }
+.month.now { background: #ffe9c2; color: #9a6400; }
+#randomCard .item { border: 2px solid var(--accent); border-radius: 14px; padding: 12px; margin-top: 10px; }
 
 .steps li { margin-bottom: 10px; }
 .steps p { margin: 2px 0 0; font-size: 15px; }
@@ -97,12 +124,16 @@ main { max-width: 640px; margin: 0 auto; padding: 0 12px 24px; }
 .templates { list-style: none; padding: 0 !important; }
 .templates li { background: #eef2f6; border-radius: 10px; padding: 8px 12px; font-weight: bold; }
 
-.count { font-size: 48px; font-weight: bold; color: var(--green); }
-.count span { font-size: 64px; }
-.badge { font-weight: bold; }
 .plain { list-style: none; padding: 0 !important; }
 .plain li { border-bottom: 1px solid var(--line); padding: 6px 0; }
-.plain .d { color: var(--sub); font-size: 13px; margin-right: 6px; }
-.plain .empty { color: var(--sub); font-size: 14px; border: none; }
 
 .footer { text-align: center; color: var(--sub); font-size: 12px; padding: 16px; }
+
+@media print {
+  .tabs, .toc, #printBtn, #randomBtn, #randomCard, .filters { display: none !important; }
+  .panel { display: block !important; }
+  body { background: #fff; font-size: 12pt; }
+  .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+  #netabook, .trivia { break-inside: auto; }
+  .item { break-inside: avoid; }
+}
